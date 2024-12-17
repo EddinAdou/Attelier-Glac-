@@ -171,6 +171,8 @@ p{
     line-height: 25px;
 }
 /* home page */
+
+  
 .home {
     padding: 0 8%;
     display: flex;
@@ -183,8 +185,30 @@ p{
     width: 35%;
 }
 .home_right {
-  width: 60%;
-  height: 500px;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    height: 500px;
+    max-width: 600px; /* Largeur maximale pour les écrans larges */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slider a {
+    flex: 0 0 100%;
+    height: 560px;
+}
+  
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    cursor: pointer;
 }
 .home_right img {
     width: 100%;
@@ -240,7 +264,7 @@ p{
 /* home page */
 
 /* best sales */
-.best_sales {
+.best-sales {
     padding: 20px 8%;
 }
 .best-sales_product {
@@ -252,6 +276,7 @@ p{
     grid-row-gap: 10px;
     height: 80vh;
 }
+
 .product1{
     grid-area: 1 / 1 / 6 / 3;
 }
@@ -316,51 +341,15 @@ p{
     color: #fff;
     font-size: 60px;
 }
-
-
-#banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url(img/banner1.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 40vh;
-}
-button.normal {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 15px 30px;
-    color: #000;
-    background-color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.2s ease;
-}
-
-#banner h4 {
-    color: #fff;
-    font-size: 16px;
-}
-
-#banner h2 {
-    color: #fff;
-    font-size: 30px;
-    padding: 10px 0;
-}
-
-#banner h2 span {
-    color: #ef3636;
-}
-
-#banner button:hover {
+.product4:hover, .product5:hover, .product7:hover {
     background-color: #000;
     color: #fff;
+    transition: 0.5s, ease-out;
+    cursor: pointer;
+}
+.product4:hover span, .product5:hover span, .product7:hover span {
+    color: #fff;
+    transition: 0.5s, ease-out;
 }
 
 

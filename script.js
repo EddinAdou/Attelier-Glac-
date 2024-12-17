@@ -1,21 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const carouselContainer = document.querySelector('.carousel-container');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let currentIndex = 0;
+const slider = document.querySelector('.slider');
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
 
-    nextButton.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % carouselContainer.children.length;
-        updateCarousel();
-    });
+let index = 0;
 
-    prevButton.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + carouselContainer.children.length) % carouselContainer.children.length;
-        updateCarousel();
-    });
+nextButton.addEventListener('click', () => {
+  index = (index + 1) % slider.children.length; // Boucle infinie
+  slider.style.transform = `translateX(-${index * 100}%)`;
+});
 
-    function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carouselContainer.style.transform = `translateX(${offset}%)`;
-    }
+prevButton.addEventListener('click', () => {
+  index = (index - 1 + slider.children.length) % slider.children.length;
+  slider.style.transform = `translateX(-${index * 100}%)`;
 });
